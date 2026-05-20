@@ -1,6 +1,10 @@
 package math;
 
 public class Fibonacci {
+    private Fibonacci() {
+        // Private constructor to prevent instantiation
+    }
+
     /**
      * Recursively calculates the nth Fibonacci number.
      * The sequence begins with 0 and 1, where each subsequent
