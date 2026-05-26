@@ -1,0 +1,26 @@
+plugins {
+	id 'java'
+	id 'application'
+}
+
+group = 'cen4802'
+version = '1.0-SNAPSHOT'
+
+repositories {
+	mavenCentral()
+}
+
+application {
+	mainClass = 'driver.DriverFunction'
+}
+
+jar {
+	manifest {
+		attributes 'Main-Class': application.mainClass.get()
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	options.encoding = 'UTF-8'
+}
+
