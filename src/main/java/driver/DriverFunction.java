@@ -8,9 +8,11 @@ public class DriverFunction {
 
     public static void main(String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
-            System.out.println("Enter the value of n to find the nth Fibonacci number: ");
+            System.out.print("Enter n: ");
+            System.out.flush();
             int n = sc.nextInt();
-            System.out.println("The " + n + "th Fibonacci number is: " + Fibonacci.nthFibonacci(n));
+            int result = Fibonacci.nthFibonacci(n);
+            System.out.printf("%nResult: Fibonacci(%d) = %d%n", n, result);
         }
     }
 }
