@@ -10,6 +10,26 @@ repositories {
 	mavenCentral()
 }
 
+// Dependencies for the project
+dependencies {
+	// JUnit Jupiter: The modern JUnit5 programming model for writing tests
+	// This artifact aggregates both the Jupiter API (for writing tests) and the Engine (for discovering/executing tests)
+	// This is a testImplementation dependency - it does NOT leak into production artifacts, preventing test-only code from reaching users
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+
+	// JUnit Platform Console Launcher: Required by Gradle's test runner to execute tests
+	// The Platform is the foundation layer that discovers and launches tests
+	// This must be on the runtime classpath for the test executor to work
+	testRuntimeOnly 'org.junit.platform:junit-platform-console-standalone:1.10.0'
+}
+
+// Configure the test task to use the JUnit Platform
+tasks.named('test') {
+	// Use the JUnit Platform for test execution
+	// This enables the Jupiter engine to discover and run @Test methods via reflection
+	useJUnitPlatform()
+}
+
 application {
 	mainClass = 'driver.DriverFunction'
 }
