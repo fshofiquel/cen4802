@@ -15,7 +15,7 @@ pipeline {
             sh './gradlew clean build --no-daemon'
           } else {
             bat '''
-              set "JAVA_HOME=C:\Users\fshof\.jdks\temurin-21.0.11"
+              set "JAVA_HOME=C:\\Users\\fshof\\.jdks\\temurin-21.0.11"
               set "PATH=%JAVA_HOME%\bin;%PATH%"
               echo JAVA_HOME=%JAVA_HOME%
               where java
