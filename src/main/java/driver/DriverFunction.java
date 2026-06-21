@@ -14,7 +14,7 @@ public class DriverFunction {
             int n = sc.nextInt();
             int result = Fibonacci.nthFibonacci(n);
             System.out.printf("%nResult: Fibonacci(%d) = %d%n", n, result);
-            System.out.println("Execution completed successfully, the current date is " + myObj);
+            System.out.println("Execution completed successfully, the current date is " + myObj + " [built via Jenkins]");
         }
     }
 }
