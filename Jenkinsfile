@@ -1,7 +1,6 @@
 pipeline {
   agent any
 
-
   stages {
     stage('Checkout') {
       steps {
@@ -15,7 +14,14 @@ pipeline {
           if (isUnix()) {
             sh './gradlew clean build --no-daemon'
           } else {
-            bat 'gradlew.bat clean build --no-daemon'
+            bat '''
+              set "JAVA_HOME=C:\Users\fshof\.jdks\temurin-21.0.11"
+              set "PATH=%JAVA_HOME%\bin;%PATH%"
+              echo JAVA_HOME=%JAVA_HOME%
+              where java
+              java -version
+              gradlew.bat clean build --no-daemon
+            '''
           }
         }
       }
