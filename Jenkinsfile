@@ -1,10 +1,6 @@
 pipeline {
   agent any
 
-  tools {
-    // optional: if you have configured JDK tool in Jenkins, name it here:
-    // jdk 'OpenJDK11'
-  }
 
   stages {
     stage('Checkout') {
