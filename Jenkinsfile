@@ -31,15 +31,6 @@ pipeline {
       steps {
         // JUnit XMLs produced by Gradle are here by default
         junit 'build/test-results/test/*.xml'
-        // publish the html report (requires HTML Publisher plugin)
-        publishHTML (target: [
-          allowMissing: true,
-          alwaysLinkToLastBuild: true,
-          keepAll: false,
-          reportDir: 'build/reports/tests/test',
-          reportFiles: 'index.html',
-          reportName: 'Unit Test Report'
-        ])
       }
     }
 
