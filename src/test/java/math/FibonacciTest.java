@@ -166,6 +166,25 @@ public class FibonacciTest {
     }
 
     /**
+     * TEST: Valid Sequence - F(7) = 13
+     *
+     * SCENARIO: Calculate the 7th Fibonacci number
+     * EXPECTED: 13 (sequence: 0, 1, 1, 2, 3, 5, 8, 13)
+     *
+     * RATIONALE:
+     * - Extends testing further into the sequence
+     * - Verifies algorithm correctness for slightly larger input
+     * - Added to demonstrate Jenkins CI detecting code changes and rebuilding
+     */
+    @Test
+    @DisplayName("Fibonacci sequence: F(7) should equal 13")
+    public void testFibonacciValidSequenceSeven() {
+        int n = 7;
+        int result = Fibonacci.nthFibonacci(n);
+        assertEquals(13, result, "F(7) must be 13 in the Fibonacci sequence");
+    }
+
+    /**
      * TEST: Valid Sequence - F(10) = 55
      *
      * SCENARIO: Calculate the 10th Fibonacci number
