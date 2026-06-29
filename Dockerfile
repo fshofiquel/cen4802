@@ -6,7 +6,7 @@ COPY --chown=gradle:gradle . .
 
 RUN gradle clean build --no-daemon
 
-FROM eclipse-temurin:17-jre-jammy
+FROM eclipse-temurin:21-jre-jammy
 
 WORKDIR /app
 
